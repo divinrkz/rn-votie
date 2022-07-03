@@ -2,10 +2,10 @@ import * as React from 'react'
 import { View, Text } from 'react-native'
 
 
-export default function RegisterScreen() {
+export default function MakePollScreen() {
     return (
         <View>
-            <Text>Register Here</Text>
+            <Text>Make Poll Screen</Text>
         </View>
     )
 }

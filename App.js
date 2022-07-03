@@ -1,22 +1,26 @@
 import {useState} from 'react'
-import { StatusBar } from 'expo-status-bar';
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { StyleSheet, Text, View } from 'react-native';
 import SplashScreen from './src/screens/Splash.screen';
+import {NavigationContainer} from '@react-navigation/native';
+import Navigation from './src/navigation/Navigation'
+import 'react-native-gesture-handler';
 
 export default function App() {
   const [showSplash, setShowSplash] = useState(true)
   setTimeout(() => {
-      setShowSplash(true)
+      setShowSplash(false)
   }, 5000)
 
   if (showSplash) {
     return <SplashScreen />
   } else {
     return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <StatusBar style="auto" />
-      </View>
+      <GestureHandlerRootView style={{ flex: 1 }}>
+        <NavigationContainer>
+            <Navigation />
+        </NavigationContainer>
+      </GestureHandlerRootView>
     );
   }
 }
