@@ -6,11 +6,11 @@ import SplashScreen from './src/screens/Splash.screen';
 export default function App() {
   const [showSplash, setShowSplash] = useState(true)
   setTimeout(() => {
-      setShowSplash(false)
+      setShowSplash(true)
   }, 5000)
 
   if (showSplash) {
-    return <SplashScreen/>
+    return <SplashScreen />
   } else {
     return (
       <View style={styles.container}>
